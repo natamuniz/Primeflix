@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
+import './filme-info.css'
 import api from '../../services/api';
 
 
@@ -35,7 +35,7 @@ function Filmes(){
 
     if(loading){
         return(
-            <div className='file-info'>
+            <div className='filme-info'>
                 <h1>Carregando detalhes...</h1>
             </div>
         )
@@ -48,8 +48,17 @@ function Filmes(){
 
             <h3>Sinopse</h3>
             <span>{filme.overview}</span>
-
             <strong>Avaliação: {filme.voteaverage} / 10</strong>
+
+            <div className='area-buttons'>
+                <button>Salvar</button>
+                <button>
+                    <a href='#'>
+                        Trailer
+                    </a>
+                </button>
+
+            </div>
         </div>
 
     )
